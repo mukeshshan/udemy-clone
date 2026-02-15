@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Udemy Clone</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background: #f7f9fa;
+        color: #1c1d1f;
+      }
+      .container {
+        max-width: 1300px;
+        margin: auto;
+        padding: 0 20px;
+      }
+      header {
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .logo {
+        font-size: 26px;
+        font-weight: 700;
+        color: #a435f0;
+      }
+      .search-box {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background: #f1f1f1;
+        border-radius: 30px;
+        padding: 8px 14px;
+        max-width: 600px;
+      }
+      .search-box input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 14px;
+      }
+      .search-box i {
+        color: #555;
+        font-size: 14px;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 14px;
+      }
+      .nav-right a {
+        text-decoration: none;
+        color: #1c1d1f;
+      }
+      .avatar {
+        width: 34px;
+        height: 34px;
+        background: #5624d0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 600;
+      }
+      .category-bar {
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 10px 0;
+      }
+      .category-list {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      .category-list a {
+        text-decoration: none;
+        color: #333;
+      }
+      .hero {
+        background-image: url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1500&q=80");
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        padding: 80px 30px;
+        text-align: center;
+        margin: 30px 0;
+      }
+      .hero h1 {
+        font-size: 32px;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+      .hero p {
+        font-size: 18px;
+        color: #fff;
+      }
+      .section-title {
+        font-size: 22px;
+        margin: 40px 0 20px 0;
+        font-weight: 600;
+      }
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .course-card {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 6px;
+        text-decoration: none;
+        color: inherit;
+      }
+      .course-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .card-content {
+        padding: 12px;
+      }
+      .course-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        line-height: 1.3;
+      }
+      .instructor {
+        font-size: 12px;
+        color: #6a6f73;
+        margin-bottom: 6px;
+      }
+      .rating {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .rating i {
+        color: #f3b93f;
+        font-size: 12px;
+      }
+      .price {
+        font-weight: 700;
+        margin-top: 8px;
+        font-size: 14px;
+      }
+      .topics-section {
+        background: #fff;
+        padding: 30px;
+        margin: 50px 0;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+      }
+      .topic-input {
+        display: flex;
+        max-width: 500px;
+        margin-top: 15px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        overflow: hidden;
+      }
+      .topic-input input {
+        flex: 1;
+        border: none;
+        padding: 12px;
+        outline: none;
+      }
+      .topic-input button {
+        background: #a435f0;
+        border: none;
+        color: #fff;
+        padding: 0 20px;
+        font-weight: 600;
+      }
+      .footer {
+        background: #1c1d1f;
+        color: #fff;
+        padding: 40px 0;
+        margin-top: 60px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+      .footer a {
+        display: block;
+        text-decoration: none;
+        color: #ddd;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: #aaa;
+      }
+  
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <div class="logo">Udemy</div>
+
+        <div class="search-box">
+          <input type="text" placeholder="Search for anything" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="nav-right">
+          <a href="#">My learning</a>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          <div class="avatar">A</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="category-bar">
+      <div class="container category-list">
+        <a href="#">Development</a>
+        <a href="#">Business</a>
+        <a href="#">IT & Software</a>
+        <a href="#">Design</a>
+        <a href="#">Marketing</a>
+        <a href="#">Personal Development</a>
+        <a href="#">Finance</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero">
+        <h1>Learn skills for your future</h1>
+        <p>Explore thousands of courses from top instructors</p>
+      </div>
+    </div>
+
+    <main class="container">
+      <h2 class="section-title">Recommended for you</h2>
+
+      <div class="course-grid" style="margin-bottom: 40px;">
+        <a href="#" class="course-card">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+          />
+          <div class="card-content">
+            <div class="course-title">Python Bootcamp for Everyone</div>
+            <div class="instructor">John Doe</div>
+            <div class="rating">
+              4.7 <i class="fa-solid fa-star"></i> (45,300)
+            </div>
+            <div class="price">₹499</div>
+          </div>
+        </a>
+
+        <a href="#" class="course-card">
+          <img
+            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&q=80"
+          />
+          <div class="card-content">
+            <div class="course-title">Web Development Masterclass</div>
+            <div class="instructor">Jane Smith</div>
+            <div class="rating">
+              4.8 <i class="fa-solid fa-star"></i> (82,100)
+            </div>
+            <div class="price">₹599</div>
+          </div>
+        </a>
+
+        <a href="#" class="course-card">
+          <img
+            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&q=80"
+          />
+          <div class="card-content">
+            <div class="course-title">Master UI/UX Design</div>
+            <div class="instructor">Alex Lee</div>
+            <div class="rating">
+              4.6 <i class="fa-solid fa-star"></i> (38,400)
+            </div>
+            <div class="price">₹649</div>
+          </div>
+        </a>
+
+        <a href="#" class="course-card">
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80"
+          />
+          <div class="card-content">
+            <div class="course-title">Advanced JavaScript</div>
+            <div class="instructor">Mia Wong</div>
+            <div class="rating">
+              4.5 <i class="fa-solid fa-star"></i> (51,200)
+            </div>
+            <div class="price">₹549</div>
+          </div>
+        </a>
+      </div>
+      <div class="course-grid">
+        <a href="#" class="course-card">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+          />
+          <div class="card-content">
+            <div class="course-title">Python Bootcamp for Everyone</div>
+            <div class="instructor">John Doe</div>
+            <div class="rating">
+              4.7 <i class="fa-solid fa-star"></i> (45,300)
+            </div>
+            <div class="price">₹499</div>
+          </div>
+        </a>
+
+        <a href="#" class="course-card">
+          <img
+            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&q=80"
+          />
+          <div class="card-content">
+            <div class="course-title">Web Development Masterclass</div>
+            <div class="instructor">Jane Smith</div>
+            <div class="rating">
+              4.8 <i class="fa-solid fa-star"></i> (82,100)
+            </div>
+            <div class="price">₹599</div>
+          </div>
+        </a>
+
+        <a href="#" class="course-card">
+          <img
+            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&q=80"
+          />
+          <div class="card-content">
+            <div class="course-title">Master UI/UX Design</div>
+            <div class="instructor">Alex Lee</div>
+            <div class="rating">
+              4.6 <i class="fa-solid fa-star"></i> (38,400)
+            </div>
+            <div class="price">₹649</div>
+          </div>
+        </a>
+
+        <a href="#" class="course-card">
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80"
+          />
+          <div class="card-content">
+            <div class="course-title">Advanced JavaScript</div>
+            <div class="instructor">Mia Wong</div>
+            <div class="rating">
+              4.5 <i class="fa-solid fa-star"></i> (51,200)
+            </div>
+            <div class="price">₹549</div>
+          </div>
+        </a>
+      </div>
+
+      <section class="topics-section">
+        <h2>Explore Topics</h2>
+        <div class="topic-input">
+          <input type="text" placeholder="e.g. Python, Excel, JavaScript" />
+          <button>Search</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="#">About us</a>
+            <a href="#">Careers</a>
+            <a href="#">Udemy Business</a>
+            <a href="#">Teach on Udemy</a>
+          </div>
+          <div>
+            <a href="#">Help & Support</a>
+            <a href="#">Contact us</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div>
+            <a href="#">Get the App</a>
+            <a href="#">Affiliate</a>
+            <a href="#">Blog</a>
+          </div>
+          <div>
+            <a href="#">India (English / ₹)</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>Udemy</div>
+          <div>© 2026 Udemy, Inc.</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
